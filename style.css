@@ -1,0 +1,81 @@
+
+@keyframes pomakni {
+    0% { transform: translateX(0); background-color: #add8e6; }
+    50% { transform: translateX(50px); background-color: #90ee90; }
+    100% { transform: translateX(0); background-color: #add8e6; }
+}
+
+@keyframes rotacija {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+#tema .okvir .izdvojeno {
+    animation: pomakni 3s infinite ease-in-out;
+    padding: 10px;
+    border: 2px solid #333;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#tema > .okvir p:first-child {
+    color: #1a237e;
+}
+
+#tema > .okvir p:last-child {
+    color: #b71c1c;
+    font-style: italic;
+}
+
+#tema .lista-animacija li:nth-child(even) {
+    animation: rotacija 2s infinite linear;
+    list-style: none;
+    padding: 8px;
+    margin: 3px 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+#tema .lista-animacija li:nth-child(odd) {
+    animation: pomakni 4s infinite alternate;
+    list-style: none;
+    padding: 8px;
+    margin: 3px 0;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.test-susjedstva span:first-child + span {
+    animation: fadeIn 2s infinite alternate;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.test-susjedstva span:first-child ~ span {
+    animation: rotacija 3s infinite linear;
+    color: darkorange;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+#tema {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.okvir p {
+    margin: 5px 0;
+    padding: 5px;
+}
